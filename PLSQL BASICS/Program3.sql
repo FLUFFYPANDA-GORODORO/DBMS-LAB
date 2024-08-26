@@ -12,15 +12,17 @@ BEGIN
     c := &c;
     
     IF a > b and a > c then
-          DBMS_OUTPUT.PUT_LINE(a ||' is greator');
-    
+        DBMS_OUTPUT.PUT_LINE(a ||' is greator');
+        
     ELSE IF b > c and b > c then
         DBMS_OUTPUT.PUT_LINE(b ||' is greator');
-    
+        
     ELSE
         DBMS_OUTPUT.PUT_LINE(c ||' is greater');
-    
+        
     ENDIF;
-  
+
+  DBMS_OUTPUT.PUT_LINE('Thnak You');
+
 END;
 /
