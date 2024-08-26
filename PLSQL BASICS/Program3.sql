@@ -20,7 +20,7 @@ BEGIN
     ELSE
         DBMS_OUTPUT.PUT_LINE(c ||' is greater');
         
-    ENDIF;
+    END IF;
 
   DBMS_OUTPUT.PUT_LINE('Thnak You');
 
