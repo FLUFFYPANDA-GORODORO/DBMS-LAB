@@ -20,3 +20,7 @@ BEGIN
 
 END;
 /
+
+-- Enter value for a:3 
+-- Enter value for b:5
+-- 5 is greater
