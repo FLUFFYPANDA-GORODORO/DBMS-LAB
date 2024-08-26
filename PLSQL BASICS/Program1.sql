@@ -1,4 +1,6 @@
-
+SET SERVEROUT ON
+SET VERIFY OFF
+   
 DECLARE 
    message  varchar2(20):= 'Hello, World!'; 
 BEGIN 
