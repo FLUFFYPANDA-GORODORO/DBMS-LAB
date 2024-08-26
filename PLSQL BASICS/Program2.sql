@@ -1,3 +1,6 @@
+SET SERVEROUT ON
+SET VERIFY OFF
+
 DECLARE 
    a integer; 
    b integer;
