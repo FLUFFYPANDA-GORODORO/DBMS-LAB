@@ -11,10 +11,10 @@ num1 := &num1;
 num2 := &num2;
 num3 := &num3;
 
-IF num1 > num2 AND num1 > num3 THEN
+IF (num1 > num2 AND num1 > num3) THEN
 dbms_output.put_line(num1 ||' is greator');
 
-ELSEIF num2 > num1 AND num2 > num3 THEN
+ELSEIF (num2 > num1 AND num2 > num3) THEN
 dbms_output.put_line(num2 ||' is greator');
 
 ELSE
