@@ -1,1 +1,11 @@
+BASIC SYNTAX
 
+DECLARE 
+   <declarations section> 
+BEGIN 
+   <executable command(s)>
+EXCEPTION 
+   <exception handling> 
+END;
+
+------------------------------------------------------------------------------------------
