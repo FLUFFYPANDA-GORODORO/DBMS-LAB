@@ -2,26 +2,26 @@ SET SERVEROUT ON
 SET VERIFY OFF
   
 DECLARE
-num1 integer;
-num2 integer;
-num3 integer;
+a number;
+b number;
+c number;
 
 BEGIN
-num1 := &num1;
-num2 := &num2;
-num3 := &num3;
+a := &a;
+b := &b;
+c := &c;
 
-IF (num1 > num2 and num1 > num3) THEN
-    dbms_output.put_line(num1 ||' is greator');
+IF a > b and a > c then
+      DBMS_OUTPUT.PUT_LINE(a ||' is greator');
 
-ELSEIF (num2 > num1 and num2 > num3) THEN
-    dbms_output.put_line(num2 ||' is greator');
+ELSE IF b > c and b > c then
+    DBMS_OUTPUT.PUT_LINE(b ||' is greator');
 
 ELSE
-    dbms_output.put_line(num3 ||' is greater');
+    DBMS_OUTPUT.PUT_LINE(c ||' is greater');
 
-END IF;
+ENDIF;
 
-dbms_output.put_line('after end if');
-END;
+DBMS_OUTPUT.PUT_LINE('END');
+END
 /
