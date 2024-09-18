@@ -61,7 +61,7 @@ INSERT INTO Fine VALUES(roll_new, curdate(),(x*5));
 end if;
 if(x>30)
 then 
-INSERT INTO Fine VALUES(roll_new, curdate(), (x*5));
+INSERT INTO Fine VALUES(roll_new, curdate(), (x*50));
 end if;
 UPDATE Borrower SET Status='returned' where RollNo=roll_new;
 END;
