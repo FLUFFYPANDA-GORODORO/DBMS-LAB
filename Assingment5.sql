@@ -104,4 +104,33 @@ SELECT * FROM Result;
 --          32 Gaurav                    DISTINCTION
 --          31 Sumedh                    FIRST CLASS
 
+/*
+create procedure proc_grade(IN ROLL int)
 
+-> begin
+
+-> declare marks int default 0;
+
+-> declare grade varchar(50);
+
+-> select s.total_marks into marks from stud_marks s where s.roll_no=Roll;
+
+-> if marks<=1500 AND marks>=990 then
+
+-> set grade="Distinction";
+
+-> elseif marks<990 AND marks>=899 then
+
+-> set grade="First Class";
+
+-> elseif marks<899 AND marks>=825
+
+-> then set grade="Second Class";
+
+-> END if;
+
+-> update result set class = grade where roll_no=Roll;
+
+-> END
+
+-> //*/
