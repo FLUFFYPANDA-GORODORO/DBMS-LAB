@@ -18,7 +18,7 @@ call insertInOld(7,'Abhishek',52000);
 call insertInOld(8,'Amit',51000);
 call insertInOld(9,'Anay',58000);
 
-mysql> select * from oldEmp;
+select * from oldEmp;
 /*
 +---------+----------+--------+
 | rollNum | name     | salary |
@@ -49,7 +49,7 @@ call insertInNew(5,'Aryan',57000);
 call insertInNew(6,'Aneesh',54000);
 call insertInNew(9,'Anay',58000);
 
-mysql> select * from newEmp;
+select * from newEmp;
 /*
 +---------+--------+--------+
 | rollNum | name   | salary |
@@ -86,7 +86,7 @@ end//
 
 call compareTables();
 
-mysql> select * from newEmp;
+select * from newEmp;
 /*
 +---------+----------+--------+
 | rollNum | name     | salary |
