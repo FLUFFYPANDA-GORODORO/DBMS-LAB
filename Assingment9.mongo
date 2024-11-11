@@ -6,8 +6,16 @@ db.createCollection('Student')
 
 db.Student.insert({roll:1,name:"Goro",marks:25});
 db.Student.insert({roll:2,name:"Doro",marks:24});
+db.Student.insert({roll:3,name:"Doro",marks:24});
 
 db.Student.find().pretty()
 
 db.Student.update({'roll':2},{$set:{'roll':4}});
+
+db.Student.update({roll:1},{$set:{roll:2,name:"GoroDoro",marks:35,email:"goro23@gmail.com",grade:"A"}},{upsert:true});
 db.Student.find().pretty();
+
+db.Student.find({roll:2})
+
+db.Student.remove({roll:3})
+db.Student.find().pretty()
