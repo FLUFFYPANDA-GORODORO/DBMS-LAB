@@ -1,0 +1,39 @@
+use GoroDoro
+
+db.createCollection("student")
+
+db.student.insert([
+  {roll:201,name:"Goro",age:19,Subject_Marks:{OPPs:90,Dsa:92}},
+  {roll:202,name:"Moro",age:20,Subject_Marks:{OPPs:85,Dsa:92}},
+  {roll:203,name:"Ooro",age:20,Subject_Marks:{OPPs:90,Dsa:72}},
+  {roll:204,name:"Poro",age:21,Subject_Marks:{OPPs:80,Dsa:52}},
+  ]);
+  
+db.student.find().pretty();
+
+// single purpose aggregation
+
+db.student.distinct('roll')
+
+db.student.aggregate([
+  {$group:{_id:"$age",count:{$sum:1}}}
+  ])
+  
+db.student.aggregate([
+  {$match:{age:20}},
+  ])
+  
+db.student.aggregate([{$group:{_id:"OPPs",maxMarks:{$max:"$Subject_Marks.OPPs"}}}])
+
+db.student.aggregate([{$group:{_id:"Dsa",minMarks:{$min:"$Subject_Marks.Dsa"}}}])
+
+db.student.aggregate([{$project:{_id:"$roll",sum:{$sum:["$Subject_Marks.OPPs","$Subject_Marks.Dsa"]}}},{$sort:{sum:1}}])
+
+// unique Index
+db.student.createIndex({'roll':1},{unique:true})
+
+// Simple Index
+db.student.createIndex({"name":1})
+
+// Compound Index
+db.student.createIndex({"subject_marks.OOP":-1,"subject_marks.DSA":-1})
