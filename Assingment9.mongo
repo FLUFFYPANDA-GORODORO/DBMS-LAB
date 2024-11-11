@@ -19,3 +19,4 @@ db.Student.find({roll:2})
 
 db.Student.remove({roll:3})
 db.Student.find().pretty()
+db.Student.drop();
