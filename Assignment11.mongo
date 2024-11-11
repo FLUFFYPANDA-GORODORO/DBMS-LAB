@@ -1,0 +1,20 @@
+show dbs;
+use assign11;
+db.createCollection("orders");
+db.orders.insertMany([
+{Cust_id: 10, Amt: 320, Status: 'P'},
+{Cust_id: 20, Amt: 500, Status: 'D'},
+{Cust_id: 40, Amt: 120, Status: 'P'},
+{Cust_id: 80, Amt: 350, Status: 'F'},
+{Cust_id: 10, Amt: 210, Status: 'D'},
+{Cust_id: 20, Amt: 650, Status: 'D'},
+{Cust_id: 70, Amt: 760, Status: 'P'}
+]);
+db.orders.find().pretty();
+
+var myfunction = function(){if(this.status=='D')emit(this.Cust_id, this.Amt)};
+var reducefunction =  function(key, values){return Array.sum(values);};
+db.orders.mapReduce(mapfunction, reducefunction,{'out':'deliveredOrders'});
+
+db.deliveredOrders.find().pretty();
+
