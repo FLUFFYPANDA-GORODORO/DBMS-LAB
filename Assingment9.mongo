@@ -1,0 +1,13 @@
+show dbs
+
+use Goro
+
+db.createCollection('Student')
+
+db.Student.insert({roll:1,name:"Goro",marks:25});
+db.Student.insert({roll:2,name:"Doro",marks:24});
+
+db.Student.find().pretty()
+
+db.Student.update({'roll':2},{$set:{'roll':4}});
+db.Student.find().pretty();
