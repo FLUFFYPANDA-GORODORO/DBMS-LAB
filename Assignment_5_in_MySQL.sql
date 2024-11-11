@@ -6,10 +6,10 @@ delimiter //
 create function insertstudent(r int,n varchar(25),m int)
 returns varchar(25)
 deterministic
-begin
-insert into studentMarks values(r,n,m);
-return "Successful";
-end;
+Begin
+  insert into studentMarks values(r,n,m);
+  return "Successful";
+End;
 //
 
 select insertstudent(201,"Gauarv",1450);
@@ -37,24 +37,25 @@ select insertstudent(203,"Karan",1280);
 -- | Successful                      |
 
 create procedure calculateGrade(IN roll INT,OUT class VARCHAR(25))
-begin 
-declare c varchar(25);
-declare m int;
-declare n varchar(100);
-select marks into m from studentMarks where rollNo = roll;
-select name into n from studentMarks where rollNo = roll;
+Begin 
+  declare c varchar(25);
+  declare m int;
+  declare n varchar(100);
+  select marks into m from studentMarks where rollNo = roll;
+  select name into n from studentMarks where rollNo = roll;
+  
+  if m>=990 and m<=1500 then
+  set c='Distinction';
+  elseif m>=900 and m<=989 then
+  set c='First Class';
+  elseif m>=825 and m<=899 then
+  set c='Higher Second Class';
+  else
+  set c='Fail';
+  end if;
 
-if m>=990 and m<=1500 then
-set c='Distinction';
-elseif m>=900 and m<=989 then
-set c='First Class';
-elseif m>=825 and m<=899 then
-set c='Higher Second Class';
-else
-set c='Fail';
-end if;
-insert into result values(roll,n,c);
-set class=c;
+  insert into result values(roll,n,c);
+  set class=c;
 End;
 //
 
