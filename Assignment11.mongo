@@ -12,7 +12,7 @@ db.orders.insertMany([
 ]);
 db.orders.find().pretty();
 
-var myfunction = function(){if(this.status=='D')emit(this.Cust_id, this.Amt)};
+var myfunction = function(){if(this.Status=='D')emit(this.Cust_id, this.Amt)};
 var reducefunction =  function(key, values){return Array.sum(values);};
 db.orders.mapReduce(mapfunction, reducefunction,{'out':'deliveredOrders'});
 
