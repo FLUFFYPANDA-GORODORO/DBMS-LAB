@@ -66,6 +66,7 @@ We welcome contributions to this repository! If you have any improvements or new
 If you have any questions or suggestions, feel free to reach out:
 
 - **Email**: gauravipatilgip@gmail.com
-- **LinkedIn**: https://www.linkedin.com/in/gaurav-patil-a963b0240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app     
+- **Email**: sanglesumedh15@gmail.com
+    
 
 Happy coding!
