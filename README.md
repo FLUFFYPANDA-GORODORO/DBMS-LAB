@@ -2,16 +2,6 @@
 
 Welcome to the DBMS-LAB repository! This repository contains lab exercises from the SPPU TE syllabus.
 
-## Table of Contents
-
-- Introduction
-- Features
-- Installation
-- Usage
-- Contributing
-- License
-- Contact
-
 ## Introduction
 
 This repository is designed to help students and developers learn and practice various concepts of Database Management Systems. It includes a variety of lab exercises and examples to enhance your understanding of DBMS.
